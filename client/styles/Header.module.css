@@ -1,0 +1,61 @@
+.header{
+    display: grid;
+    grid-area: h;
+    background-color: rgb(34, 34, 34);
+  grid-template-columns: 8em repeat(3, 1fr) 12em;
+  grid-template-rows: 3.5em;
+border-bottom: 2px solid rgb(51, 51, 51);
+position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+.project{
+    color: white;
+    font-size: 200%;
+    grid-column-start: 3;
+    grid-row-start: 1;
+    margin-top: 8px;
+margin-left: 4em ;
+}
+.log{
+    color: white;
+    padding: 10px;
+    background-color: rgb(34, 34, 34);
+        border: none;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+}
+.logout{
+    color: white;
+    padding: 10px;
+    background-color: rgb(34, 34, 34);
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+.logbtn{
+    color: white;
+    padding: 10px;
+    background-color: rgb(34, 34, 34);
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}.one{
+grid-column-start: 1;
+grid-row-start: 1;
+margin-top: 1em;
+margin-left: 1em;
+}.group{
+    grid-column-start: 5;
+    grid-row-start: 1;
+    margin-top: 1em;
+}.ava{
+    grid-column-start: 5;
+    grid-row-start: 1;
+    margin-left: -0.5em;
+    margin-top: -0.9em;
+}

@@ -1,0 +1,34 @@
+.singlepage_wrapper{
+    display: grid;
+ grid-template-rows: 3.5em auto auto;
+ grid-template-columns: 1fr;
+ grid-template-areas: 
+ "h"
+ "cont"
+ "footer"
+ ;
+ }
+ 
+ .wrap_content{
+     display: grid;
+     grid-area: cont;
+     grid-template-columns: 232.5px 60em 232.5px;
+     grid-template-rows: min-content;
+    opacity: 0.9;
+    min-height: 800px;
+     color: white;
+     }.center_content{
+         margin-top: 4em;
+         margin-bottom: 4em;
+         grid-column-start:2;
+     }.weather{
+         margin-left: 1em;
+         margin-top: 3em;
+         grid-row-start: 1;
+         grid-column-start:1;
+     }.wrapfooter{
+        grid-row-start: 3;
+        grid-column-start:1;
+     }
+ 
+ 

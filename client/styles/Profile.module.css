@@ -1,0 +1,44 @@
+.prof{
+    display: grid;
+    grid-area: prof;
+grid-template-columns: 200px 500px;
+grid-template-rows: 300px;
+background-color: rgb(34, 34, 34);
+    border: none;
+    margin-top: 5%;
+    padding: 50px 100px;
+    text-align: center;
+    border-radius: 20px;
+    font-size: 20px;
+    box-shadow: 0px 8px 16px 6px rgba(0,0,0,0.2);
+
+}
+.profile img {
+    width: 200px; 
+    height: 200px; 
+    object-fit: cover;
+    border-radius: 50px;
+    margin-right: 24em;
+    grid-row-start: 1;
+    margin-top: 3em;
+    margin-left: -2em;
+}.but{
+    background-color: rgb(51, 51, 51);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 20px;
+    display: inline-block;
+    font-size: 16px;
+}
+.data{
+    grid-column-start: 2;
+    grid-row-start: 1;
+    margin-top: 4em;
+    margin-right: 14em;
+}.pochta{
+    grid-column-start: 2;
+    grid-row-start: 1;
+}

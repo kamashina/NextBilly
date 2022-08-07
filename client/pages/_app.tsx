@@ -1,0 +1,14 @@
+import type { AppProps } from "next/app";
+import { Provider, useDispatch } from "react-redux";
+import { store } from "../store";
+import "../styles/global.css";
+
+function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <Provider store={store}>
+      <Component {...pageProps} />
+    </Provider>
+  );
+}
+
+export default MyApp;

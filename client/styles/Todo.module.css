@@ -1,0 +1,42 @@
+
+.todocont{
+    display: grid;
+    grid-template-columns: 2rem 16rem;
+    grid-template-rows: min-content;
+    border: 1px solid rgb(51, 51, 51);
+    background-color: rgb(34, 34, 34);
+    max-width: 18rem;
+}
+
+.nocomplete{
+    display: grid;
+    grid-column-start: 2;
+    background-color: rgb(34, 34, 34);
+padding: 1rem;
+overflow-wrap: break-word;  
+cursor: pointer;
+word-wrap: break-word;
+word-break: keep-all; 
+}
+.complete{
+    display: grid;
+    background-color: rgb(34, 34, 34);
+    grid-column-start: 2;
+    padding: 1rem;
+    cursor: pointer;
+    opacity: 0.5;
+    overflow-wrap: break-word;  
+        word-wrap: break-word;
+        text-decoration: line-through;
+        word-break: keep-all;  
+}.checkactive {
+margin-top: -2rem;
+margin-left: 1rem;
+grid-column-start: 1;
+    border: 2px solid #222;
+    display: inline-block;
+    border-radius: 3px;
+    background: #222 url(https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/White_check.svg/1200px-White_check.svg.png) center/1250% no-repeat;
+    transition: background-size 0.2s ease;
+    cursor: pointer;
+  }
