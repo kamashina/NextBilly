@@ -1,31 +1,38 @@
-import { UserActionTypes, userAction } from './action';
-import { userState } from '../../types/types';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { userInfo } from "../../types/types";
 
+export interface userState {
+  data: userInfo[];
+  loading: boolean;
+  auth: boolean;
+}
 
-
-export const initialState = {
- data: {
-  id: "0",
-	email: "Ghost",
-	nickname: 'Ghost',
-	avatarUrl: "http://localhost:1983/uploads/KSeclybJMGg.jpg",
-},
+const initialState: userState = {
+  data: [],
+  loading: false,
   auth: false,
 };
+export const UserSlice = createSlice({
+  name: "user",
+  initialState,
+  reducers: {
+    UserLoad: (state: userState) => {
+      state.loading = true;
+      console.log("ЗАгрузка/////");
+    },
+    UserFetchingSuccess: (
+      state: userState,
+      action: PayloadAction<userInfo[]>
+    ) => {
+      state.data = action.payload;
+      state.loading = false;
+      state.auth = true;
+    },
+    UserLogout: (state: userState) => {
+      state.auth = false;
+    },
+  },
+});
 
-export const UserReducer = (state = initialState, action: userAction): userState => {
-  switch (action.type) {
-    case UserActionTypes.CHANGE_DATA:
-      return {
-        ...state,
-        data: action.payload,
-      }
-       case UserActionTypes.CHANGE_AUTH:
-       return{
-        ...state,
-        auth: action.payload,
-       }
-      default:
-      return state;
-  }
-};
+export const { UserFetchingSuccess, UserLogout, UserLoad } = UserSlice.actions;
+export default UserSlice.reducer;

@@ -6,7 +6,7 @@ import useAction from "../hooks/useAction";
 import { useEffect } from "react";
 
 const Header: React.FC = () => {
-  const { auth } = useAppSelector((state) => state.authorization);
+  const { auth, loading } = useAppSelector((state) => state.authorization);
   const { AxiosUserAction } = useAction();
   useEffect(() => {
     AxiosUserAction();
@@ -17,7 +17,7 @@ const Header: React.FC = () => {
         <Navbar />
       </div>
       <span className={styles.project}>Проект №1</span>
-      {auth ? null : (
+      {auth || loading ? null : (
         <div className={styles.group}>
           <Link href="/Reg">
             <a className={styles.logout}>Регистрация</a>

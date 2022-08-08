@@ -27,6 +27,11 @@ const Login: React.FC = () => {
       });
   };
 
+  const Auth = (e: React.MouseEvent<HTMLElement>) => {
+    setEmail("kamran@test.ru");
+    setPassword("12345");
+  };
+
   return (
     <MainContainer title={"Login"}>
       <div>
@@ -51,6 +56,9 @@ const Login: React.FC = () => {
             onClick={clickHandler}
           >
             Войти
+          </button>
+          <button type="button" className={styles.inpsubbez} onClick={Auth}>
+            Нажми, если нет аккаунта
           </button>
         </div>
       </div>

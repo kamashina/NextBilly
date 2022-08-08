@@ -1,18 +1,20 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
-import { useDispatch } from "react-redux";
 import { useAppSelector } from "../hooks/useAppSelector";
-import { setAuth } from "../store/Reduxauth/action";
+import { UserLogout } from "../store/Reduxauth/reducer";
 import styles from "../styles/Navbar.module.css";
+import { useAppDispatch } from "../hooks/useAppDispatch";
 
 const Navbar: React.FC = () => {
-  const dispatch = useDispatch();
-  const { auth, data } = useAppSelector((state) => state.authorization);
+  const dispatch = useAppDispatch();
+  const { auth, data, loading } = useAppSelector(
+    (state) => state.authorization
+  );
   const route = useRouter();
   const Logout = () => {
+    dispatch(UserLogout());
     localStorage.removeItem("token");
-    dispatch(setAuth(false));
     route.push("/Login");
   };
 
@@ -23,11 +25,23 @@ const Navbar: React.FC = () => {
           <div className={styles.nav}>
             <div className={styles.dropdown}>
               <a type="button">
-                <img
-                  src={data.avatarUrl}
-                  alt="ava"
-                  className={styles.imgmenu}
-                />
+                {loading ? (
+                  <div>
+                    <img
+                      src="/VAyR.gif"
+                      alt="loading..."
+                      className={styles.imgmenu}
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <img
+                      src={data.avatarUrl}
+                      alt="ava"
+                      className={styles.imgmenu}
+                    />
+                  </div>
+                )}
               </a>
               <div className={styles.dropdown_content}>
                 <Link href="/">Главное</Link>

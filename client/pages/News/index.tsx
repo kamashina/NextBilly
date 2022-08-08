@@ -7,18 +7,14 @@ import MainContainer from "../../component/MainContainer";
 import styles from "../../styles/News.module.css";
 import { useAppSelector } from "../../hooks/useAppSelector";
 import useAction from "../../hooks/useAction";
-import NewsPage from "./[idx]";
 
 const News: React.FC = () => {
   const [search, SetSearch] = useState<string>("");
   const { fetchNewsAction } = useAction();
   const NowDate = moment().format("YYYY-MM-DD");
   const API_KEY_NEWS = "9a70ff2ed7514288b7ce8289b9bed5e0";
-  const { news, error } = useAppSelector((state) => state.getnews);
+  const { news, error, loading } = useAppSelector((state) => state.getnews);
 
-  if (error) {
-    return <div>{error}</div>;
-  }
   async function addNew() {
     if (search === "") {
       return <div>Введите запрос</div>;
@@ -45,22 +41,28 @@ const News: React.FC = () => {
       <button className={styles.btnnews} onClick={addNew} type="button">
         Поиск
       </button>
-      <div className={styles.container}>
-        {news.map(({ title, urlToImage }, idx: number) => (
-          <div>
-            <Link href={`/News/${idx}`}>
-              <a className={styles.link}>
-                <div className={styles.item}>
-                  <img src={urlToImage} alt="img" className={styles.photo} />
-                  <div>
-                    <div>{title}</div>
+      {loading ? (
+        <div className={styles.container}>
+          <img className={styles.loading} src="/loading-5.gif" />
+        </div>
+      ) : (
+        <div className={styles.container}>
+          {news.map(({ title, urlToImage }, idx: number) => (
+            <div>
+              <Link href={`/News/${idx}`}>
+                <a className={styles.link}>
+                  <div className={styles.item}>
+                    <img src={urlToImage} alt="img" className={styles.photo} />
+                    <div>
+                      <div>{title}</div>
+                    </div>
                   </div>
-                </div>
-              </a>
-            </Link>
-          </div>
-        ))}
-      </div>
+                </a>
+              </Link>
+            </div>
+          ))}
+        </div>
+      )}
     </MainContainer>
   );
 };

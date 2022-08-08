@@ -12,7 +12,7 @@
  .wrap_content{
      display: grid;
      grid-area: cont;
-     grid-template-columns: 232.5px 60em 232.5px;
+     grid-template-columns: 14.531rem 60em 14.531rem;
      grid-template-rows: min-content;
     opacity: 0.9;
     min-height: 800px;
@@ -28,7 +28,9 @@
          grid-column-start:1;
      }.wrapfooter{
         grid-row-start: 3;
-        grid-column-start:1;
+        bottom: auto;
+        width: 100%;
+        z-index: 1;
      }
  
  

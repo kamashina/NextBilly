@@ -1,18 +1,18 @@
 import { useRouter } from "next/router";
 import React from "react";
-import { useDispatch } from "react-redux";
 import MainContainer from "../component/MainContainer";
 import { useAppSelector } from "../hooks/useAppSelector";
-import { setAuth } from "../store/Reduxauth/action";
 import styles from "../styles/Profile.module.css";
+import { useAppDispatch } from "../hooks/useAppDispatch";
+import { UserLogout } from "../store/Reduxauth/reducer";
 
 const Profile: React.FC = () => {
   const { data } = useAppSelector((state) => state.authorization);
   const route = useRouter();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const Logout = (e: React.MouseEvent<HTMLElement>) => {
     localStorage.removeItem("token");
-    dispatch(setAuth(false));
+    dispatch(UserLogout());
     route.push("/Login");
   };
   return (
