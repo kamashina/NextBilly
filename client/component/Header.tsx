@@ -16,7 +16,9 @@ const Header: React.FC = () => {
       <div className={styles.ava}>
         <Navbar />
       </div>
-      <span className={styles.project}>Проект №1</span>
+      <Link href="/">
+        <a className={styles.project}>Проект №1</a>
+      </Link>
       {auth || loading ? null : (
         <div className={styles.group}>
           <Link href="/Reg">

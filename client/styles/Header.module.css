@@ -17,6 +17,7 @@ position: fixed;
     grid-row-start: 1;
     margin-top: 8px;
 margin-left: 4em ;
+text-decoration: none;
 }
 .log{
     color: white;

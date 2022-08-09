@@ -12,7 +12,7 @@ interface TodoCont {
 }
 
 const Todos: React.FC = () => {
-  const [message, setMessage] = useState<string>("apple");
+  const [message, setMessage] = useState<string>("");
   const [filterArr, setFilterArr] = useState<string>("All");
   const [todo, setTodo] = useState<TodoCont[]>([]);
 
@@ -102,12 +102,14 @@ const Todos: React.FC = () => {
                           )
                           .map(
                             ({ message, complete, active, id }: TodoCont) => (
-                              <Todo
-                                id={id}
-                                message={message}
-                                complete={complete}
-                                active={active}
-                              />
+                              <div key={id}>
+                                <Todo
+                                  id={id}
+                                  message={message}
+                                  complete={complete}
+                                  active={active}
+                                />
+                              </div>
                             )
                           )}
                       </div>
@@ -121,12 +123,14 @@ const Todos: React.FC = () => {
                           )
                           .map(
                             ({ message, complete, active, id }: TodoCont) => (
-                              <Todo
-                                id={id}
-                                message={message}
-                                complete={complete}
-                                active={active}
-                              />
+                              <div key={id}>
+                                <Todo
+                                  id={id}
+                                  message={message}
+                                  complete={complete}
+                                  active={active}
+                                />
+                              </div>
                             )
                           )}
                       </div>
