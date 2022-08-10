@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import { FC } from "react";
 import { useAppSelector } from "../hooks/useAppSelector";
 import Login from "../pages/Login";
+import Reg from "../pages/Reg";
 import LoadingImage from "./LoadingImage";
 import MainContainer from "./MainContainer";
 interface IAuth {
@@ -20,9 +21,13 @@ const AuthCheck: FC<IAuth> = ({ children }) => {
         </MainContainer>
       );
     }
-    return (
+    return route.pathname === "/Login" ? (
       <MainContainer>
         <Login />
+      </MainContainer>
+    ) : (
+      <MainContainer>
+        <Reg />
       </MainContainer>
     );
   }
