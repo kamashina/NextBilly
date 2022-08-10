@@ -1,6 +1,6 @@
 import { instance } from "../../axios";
 import { UserSlice } from "../Reduxauth/reducer";
-import { userInfo } from "../../types/types";
+import { userInfo } from "../../types/UserTypes";
 import { AppDispatch } from "../index";
 
 if (typeof window !== "undefined") {
@@ -9,7 +9,7 @@ if (typeof window !== "undefined") {
 export const AxiosUserAction = () => async (dispatch: AppDispatch) => {
   dispatch(UserSlice.actions.UserLoad());
   await instance
-    .get<userInfo[]>("/auth/me", {
+    .get<userInfo>("/auth/me", {
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
     })
     .then((response) => {

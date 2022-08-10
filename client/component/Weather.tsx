@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useState, useEffect } from "react";
 import instance from "axios";
 import styles from "../styles/Weather.module.css";

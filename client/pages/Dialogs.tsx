@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { instance } from "../axios";
 import Posts from "../component/Posts";
 import { useAppSelector } from "../hooks/useAppSelector";
-import { IPosts } from "../types/types";
+import { IPosts } from "../types/UserTypes";
 import styles from "../styles/Posts.module.css";
 import { GetServerSideProps } from "next";
 

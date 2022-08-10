@@ -1,7 +1,7 @@
 import { GetServerSideProps } from "next";
 import Link from "next/link";
 import React from "react";
-import { IPosts } from "../types/types";
+import { IPosts } from "../types/UserTypes";
 import styles from "../styles/Posts.module.css";
 import axios from "axios";
 import { instance } from "../axios";

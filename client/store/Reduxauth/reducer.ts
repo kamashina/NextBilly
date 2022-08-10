@@ -1,15 +1,13 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { userInfo } from "../../types/types";
-
-export interface userState {
-  data: userInfo[];
-  loading: boolean;
-  auth: boolean;
-  error: string;
-}
+import { userInfo, userState } from "../../types/UserTypes";
 
 const initialState: userState = {
-  data: [],
+  data: {
+    id: "",
+    email: "",
+    avatarUrl: "",
+    nickname: "",
+  },
   loading: false,
   auth: false,
   error: "",
@@ -24,7 +22,7 @@ export const UserSlice = createSlice({
     },
     UserFetchingSuccess: (
       state: userState,
-      action: PayloadAction<userInfo[]>
+      action: PayloadAction<userInfo>
     ) => {
       state.data = action.payload;
       state.loading = false;
