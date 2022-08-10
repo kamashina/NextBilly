@@ -42,7 +42,6 @@ const Todos: React.FC = () => {
     setTodo(
       todo.filter((todo: { complete: boolean }) => todo.complete === false)
     );
-    console.log(todo);
   };
 
   return (
