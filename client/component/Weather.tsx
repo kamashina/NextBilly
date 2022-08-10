@@ -22,16 +22,10 @@ const Weather: React.FC = () => {
     city: "",
     time: "",
   });
+  const [loading, setLoading] = useState<boolean>(false);
   const API_KEYS = "fe21c95c2d46471796123346220907";
   async function addWeather() {
-    function loading() {
-      return (
-        <div className={styles.weathercont}>
-          <img src="/loading-5.gif" />
-        </div>
-      );
-    }
-    loading();
+    setLoading(true);
     await instance
       .get(
         `https://api.weatherapi.com/v1/current.json?key=${API_KEYS}&q=Moscow&aqi=no`
@@ -45,12 +39,15 @@ const Weather: React.FC = () => {
           city: responce.data.location.name,
           time: responce.data.location.localtime,
         });
+        setLoading(false);
       });
   }
   useEffect(() => {
     addWeather();
   }, []);
-  return (
+  return loading ? (
+    <img src="/loading-5.gif" alt="load" className={styles.weathercont} />
+  ) : (
     <div className={styles.weathercont}>
       <p className={styles.temp}>{weather.temp}°</p>
       <p className={styles.wind}>Ветер: {weather.wind} м/с</p>
