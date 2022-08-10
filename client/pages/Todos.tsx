@@ -15,6 +15,7 @@ const Todos: React.FC = () => {
   const [message, setMessage] = useState<string>("");
   const [filterArr, setFilterArr] = useState<string>("All");
   const [todo, setTodo] = useState<TodoCont[]>([]);
+  const [rend, setRend] = useState<boolean>(false);
 
   const Newtodo = {
     id: v4(),
@@ -35,6 +36,13 @@ const Todos: React.FC = () => {
     if (e.key === "Enter") {
       addTodo();
     }
+  };
+
+  const RemoveComplete = (e: React.MouseEvent<HTMLElement>) => {
+    setTodo(
+      todo.filter((todo: { complete: boolean }) => todo.complete === false)
+    );
+    console.log(todo);
   };
 
   return (
@@ -72,18 +80,20 @@ const Todos: React.FC = () => {
                                   : styles.nocomplete
                               }
                               defaultChecked={todo[idx].complete}
-                              onClick={() =>
-                                (todo[idx].complete = !todo[idx].complete)
-                              }
+                              onClick={() => {
+                                todo[idx].complete = !todo[idx].complete;
+                                setRend(!rend);
+                              }}
                             >
                               {message}
                             </div>
                             <input
                               type="checkbox"
                               checked={todo[idx].active}
-                              onChange={() =>
-                                (todo[idx].active = !todo[idx].active)
-                              }
+                              onChange={() => {
+                                todo[idx].active = !todo[idx].active;
+                                setRend(!rend);
+                              }}
                               className={styles.checkactive}
                             />
                           </div>
@@ -153,7 +163,9 @@ const Todos: React.FC = () => {
           Completed
         </button>
 
-        <button type="button">Rcomplete</button>
+        <button type="button" onClick={RemoveComplete}>
+          DelCompl
+        </button>
       </div>
     </div>
   );
