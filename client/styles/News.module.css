@@ -34,7 +34,5 @@ gap: 1.5em;
     color:rgb(34, 34, 34);
 }.loading{
     grid-column-start: 2;
-    width: 20rem;
-    height: 15rem;
     margin-top: 6rem;
 }

@@ -5,6 +5,7 @@ import styles from "../../styles/News.module.css";
 import { useAppSelector } from "../../hooks/useAppSelector";
 import useAction from "../../hooks/useAction";
 import { NewsInfo } from "../../types/NewsTypes";
+import Image from "next/image";
 
 const News: React.FC = () => {
   const [search, SetSearch] = useState<string>("");
@@ -22,6 +23,7 @@ const News: React.FC = () => {
   const onKeyDownPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       addNew();
+      console.log(news);
     }
   };
 
@@ -41,24 +43,36 @@ const News: React.FC = () => {
       </button>
       {loading ? (
         <div className={styles.container}>
-          <img className={styles.loading} src="/loading-5.gif" />
+          <Image
+            src="/loading-5.gif"
+            width={320}
+            height={240}
+            className={styles.loading}
+            alt="load"
+          />
         </div>
       ) : (
         <div className={styles.container}>
-          {news.map(({ title, urlToImage, id }: NewsInfo, idx: number) => (
-            <div key={id}>
-              <Link href={`/News/${idx}`}>
-                <a className={styles.link}>
-                  <div className={styles.item}>
-                    <img src={urlToImage} alt="img" className={styles.photo} />
-                    <div>
-                      <div>{title}</div>
+          {news.map(({ title, urlToImage, id }: NewsInfo, idx: number) =>
+            urlToImage === null ? null : (
+              <div key={id}>
+                <Link href={`/News/${idx}`}>
+                  <a className={styles.link}>
+                    <div className={styles.item}>
+                      <img
+                        src={urlToImage}
+                        alt="img"
+                        className={styles.photo}
+                      />
+                      <div>
+                        <div>{title}</div>
+                      </div>
                     </div>
-                  </div>
-                </a>
-              </Link>
-            </div>
-          ))}
+                  </a>
+                </Link>
+              </div>
+            )
+          )}
         </div>
       )}
     </div>
