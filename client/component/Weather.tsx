@@ -24,13 +24,14 @@ const Weather: React.FC = () => {
   });
   const API_KEYS = "fe21c95c2d46471796123346220907";
   async function addWeather() {
-    const loading = () => {
+    function loading() {
       return (
         <div className={styles.weathercont}>
           <img src="/loading-5.gif" />
         </div>
       );
-    };
+    }
+    loading();
     await instance
       .get(
         `https://api.weatherapi.com/v1/current.json?key=${API_KEYS}&q=Moscow&aqi=no`
