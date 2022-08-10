@@ -11,7 +11,7 @@ const Video: React.FC = () => {
     setUrl(e.target.value);
   };
   return (
-    <div>
+    <div className={styles.boxvideo}>
       <input
         onChange={handleUrlChange}
         type="text"

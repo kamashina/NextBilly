@@ -1,7 +1,7 @@
 .singlepage_wrapper{
     display: grid;
  grid-template-rows: 4.5em auto auto;
- grid-template-columns: 1fr;
+ grid-template-columns: 100%;
  grid-template-areas: 
  "h"
  "cont"
@@ -12,25 +12,12 @@
  .wrap_content{
      display: grid;
      grid-area: cont;
-     grid-template-columns: 14.531rem 60em 14.531rem;
+     grid-template-columns: 100%;
      grid-template-rows: min-content;
-    opacity: 0.9;
-    min-height: 46.875rem;
+    overflow-y: scroll;
+    scroll-snap-align: start;
+    max-height: 40.3rem;
      color: white;
-     }.center_content{
-         margin-top: 4em;
-         margin-bottom: 4em;
-         grid-column-start:2;
-     }.weather{
-         margin-left: 1em;
-         margin-top: 3em;
-         grid-row-start: 1;
-         grid-column-start:1;
-     }.wrapfooter{
-        grid-row-start: 3;
-        bottom: auto;
-        width: 100%;
-        z-index: 1;
      }
  
  

@@ -24,7 +24,7 @@ const Dialogs: React.FC<Post> = ({ posts }) => {
   }
 
   return (
-    <div>
+    <div className={styles.dialogs}>
       <title>Диалог</title>
       <div className={styles.scroller}>
         <Posts posts={posts} />

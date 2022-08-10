@@ -28,7 +28,7 @@ const News: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className={styles.news}>
       <input
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
           SetSearch(e.target.value)

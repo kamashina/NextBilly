@@ -1,9 +1,14 @@
 .prof{
     display: grid;
-    grid-area: prof;
+width: 48rem;
+height: 20rem;
+margin-top: 2rem;
+margin-bottom: 4rem;
+margin-left: auto;
+margin-right: auto;
 grid-template-columns: 200px 500px;
 grid-template-rows: 300px;
-background-color: rgb(34, 34, 34);
+background-color: rgb(34, 34, 34, 0.9);
     border: none;
     margin-top: 5%;
     padding: 50px 100px;

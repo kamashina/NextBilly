@@ -16,22 +16,15 @@ const MainContainer: FC<IMainContainer> = ({ children }) => {
   useEffect(() => {
     AxiosUserAction();
   }, []);
-  const { auth } = useAppSelector((state) => state.authorization);
   return (
     <>
       <Head>
         <meta></meta>
       </Head>
       <div className={styles.singlepage_wrapper}>
+        <img src="/1650925847_2-vsegda-pomnim-com-p-gori-cherno-belie-foto-3.jpeg" />
         <Header />
-        <div className={styles.wrap_content}>
-          {auth ? (
-            <div className={styles.weather}>
-              <Weather />
-            </div>
-          ) : null}
-          <div className={styles.center_content}>{children}</div>
-        </div>
+        <div className={styles.wrap_content}>{children}</div>
         <div className={styles.wrapfooter}>
           <Footer />
         </div>

@@ -7,7 +7,7 @@ interface ILoadImage {
 
 const LoadingImage: FC<ILoadImage> = ({ url }) => {
   return (
-    <div>
+    <div className={styles.loadbox}>
       <img src={url} className={styles.AuthLoad} />
     </div>
   );
