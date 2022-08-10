@@ -1,19 +1,17 @@
-/* eslint-disable react/jsx-key */
-/* eslint-disable @next/next/no-img-element */
 import React, { useState } from "react";
 import moment from "moment";
 import Link from "next/link";
-import MainContainer from "../../component/MainContainer";
 import styles from "../../styles/News.module.css";
 import { useAppSelector } from "../../hooks/useAppSelector";
 import useAction from "../../hooks/useAction";
+import { NewsInfo } from "../../types/NewsTypes";
 
 const News: React.FC = () => {
   const [search, SetSearch] = useState<string>("");
   const { fetchNewsAction } = useAction();
   const NowDate = moment().format("YYYY-MM-DD");
   const API_KEY_NEWS = "9a70ff2ed7514288b7ce8289b9bed5e0";
-  const { news, error, loading } = useAppSelector((state) => state.getnews);
+  const { news, loading } = useAppSelector((state) => state.getnews);
 
   async function addNew() {
     if (search === "") {
@@ -28,7 +26,7 @@ const News: React.FC = () => {
   };
 
   return (
-    <MainContainer title="Новости">
+    <div>
       <input
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
           SetSearch(e.target.value)
@@ -47,8 +45,8 @@ const News: React.FC = () => {
         </div>
       ) : (
         <div className={styles.container}>
-          {news.map(({ title, urlToImage }, idx: number) => (
-            <div>
+          {news.map(({ title, urlToImage, id }: NewsInfo, idx: number) => (
+            <div key={id}>
               <Link href={`/News/${idx}`}>
                 <a className={styles.link}>
                   <div className={styles.item}>
@@ -63,7 +61,7 @@ const News: React.FC = () => {
           ))}
         </div>
       )}
-    </MainContainer>
+    </div>
   );
 };
 export default News;

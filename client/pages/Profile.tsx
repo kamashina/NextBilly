@@ -16,28 +16,26 @@ const Profile: React.FC = () => {
     route.push("/Login");
   };
   return (
-    <MainContainer title="Профиль">
-      <div className={styles.profile}>
-        <div className={styles.prof}>
-          <h1 className={styles.pochta}>Профиль {data.email}</h1>
-          <img src={data.avatarUrl} alt="ava" className={styles.avatarka} />
-          <div className={styles.data}>
-            <p>Данные аккаунта:</p>
-            <ul>
-              Почта:
-              {data.email}
-            </ul>
-            <ul>
-              Ник:
-              {data.nickname}
-            </ul>
-            <button type="button" className={styles.but} onClick={Logout}>
-              Выход
-            </button>
-          </div>
+    <div className={styles.profile}>
+      <div className={styles.prof}>
+        <h1 className={styles.pochta}>Профиль {data.email}</h1>
+        <img src={data.avatarUrl} alt="ava" className={styles.avatarka} />
+        <div className={styles.data}>
+          <p>Данные аккаунта:</p>
+          <ul>
+            Почта:
+            {data.email}
+          </ul>
+          <ul>
+            Ник:
+            {data.nickname}
+          </ul>
+          <button type="button" className={styles.but} onClick={Logout}>
+            Выход
+          </button>
         </div>
       </div>
-    </MainContainer>
+    </div>
   );
 };
 export default Profile;

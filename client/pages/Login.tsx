@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { instance } from "../axios";
 import styles from "../styles/auth/Login.module.css";
-import MainContainer from "../component/MainContainer";
 import { useRouter } from "next/router";
 import useAction from "../hooks/useAction";
 
@@ -33,36 +32,30 @@ const Login: React.FC = () => {
   };
 
   return (
-    <MainContainer title={"Login"}>
-      <div>
-        <div className={styles.login}>
-          <h1 className={styles.mess}>Вход</h1>
-          <input
-            onChange={(event) => setEmail(event.target.value)}
-            placeholder="Почта"
-            className={styles.inp1}
-            value={changeemail}
-          />
-          <input
-            onChange={(event) => setPassword(event.target.value)}
-            placeholder="Пароль"
-            className={styles.inp2}
-            value={changepassword}
-            type="password"
-          />
-          <button
-            type="button"
-            className={styles.inpsub}
-            onClick={clickHandler}
-          >
-            Войти
-          </button>
-          <button type="button" className={styles.inpsubbez} onClick={Auth}>
-            Нажми, если нет аккаунта
-          </button>
-        </div>
+    <div>
+      <div className={styles.login}>
+        <h1 className={styles.mess}>Вход</h1>
+        <input
+          onChange={(event) => setEmail(event.target.value)}
+          placeholder="Почта"
+          className={styles.inp1}
+          value={changeemail}
+        />
+        <input
+          onChange={(event) => setPassword(event.target.value)}
+          placeholder="Пароль"
+          className={styles.inp2}
+          value={changepassword}
+          type="password"
+        />
+        <button type="button" className={styles.inpsub} onClick={clickHandler}>
+          Войти
+        </button>
+        <button type="button" className={styles.inpsubbez} onClick={Auth}>
+          Нажми, если нет аккаунта
+        </button>
       </div>
-    </MainContainer>
+    </div>
   );
 };
 

@@ -3,7 +3,7 @@
     grid-area: h;
     background-color: rgb(34, 34, 34);
   grid-template-columns: 8em repeat(3, 1fr) 12em;
-  grid-template-rows: 3.5em;
+  grid-template-rows: 3.5em 1rem;
 border-bottom: 2px solid rgb(51, 51, 51);
 position: fixed;
     top: 0;
@@ -15,8 +15,14 @@ position: fixed;
     font-size: 200%;
     grid-column-start: 3;
     grid-row-start: 1;
-    margin-top: 8px;
-margin-left: 4em ;
+    margin: auto;
+text-decoration: none;
+}.path{
+    color: white;
+    font-size: 100%;
+    grid-column-start: 3;
+    margin: auto;
+    grid-row-start: 2;
 text-decoration: none;
 }
 .log{

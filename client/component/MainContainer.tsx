@@ -1,23 +1,26 @@
 import Head from "next/head";
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 import Weather from "./Weather";
 import styles from "../styles/MainConstainer.module.css";
 import { useAppSelector } from "../hooks/useAppSelector";
+import useAction from "../hooks/useAction";
 
 interface IMainContainer {
-  children: JSX.Element;
-  title: string;
+  children: React.ReactNode;
 }
 
-const MainContainer: FC<IMainContainer> = ({ children, title }) => {
+const MainContainer: FC<IMainContainer> = ({ children }) => {
+  const { AxiosUserAction } = useAction();
+  useEffect(() => {
+    AxiosUserAction();
+  }, []);
   const { auth } = useAppSelector((state) => state.authorization);
   return (
     <>
       <Head>
         <meta></meta>
-        <title>{title}</title>
       </Head>
       <div className={styles.singlepage_wrapper}>
         <Header />

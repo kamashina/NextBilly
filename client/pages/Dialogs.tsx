@@ -4,7 +4,6 @@ import Posts from "../component/Posts";
 import { useAppSelector } from "../hooks/useAppSelector";
 import { IPosts } from "../types/types";
 import styles from "../styles/Posts.module.css";
-import MainContainer from "../component/MainContainer";
 import { GetServerSideProps } from "next";
 
 interface Post {
@@ -25,23 +24,21 @@ const Dialogs: React.FC<Post> = ({ posts }) => {
   }
 
   return (
-    <MainContainer title="Сообщения">
-      <div>
-        <title>Диалог</title>
-        <div className={styles.scroller}>
-          <Posts posts={posts} />
-        </div>
-        <div className={styles.tool}>
-          <input
-            onChange={(event) => setText(event.target.value)}
-            placeholder="Сообщение"
-            value={text}
-            className={styles.inp}
-            onKeyDown={addPost}
-          />
-        </div>
+    <div>
+      <title>Диалог</title>
+      <div className={styles.scroller}>
+        <Posts posts={posts} />
       </div>
-    </MainContainer>
+      <div className={styles.tool}>
+        <input
+          onChange={(event) => setText(event.target.value)}
+          placeholder="Сообщение"
+          value={text}
+          className={styles.inp}
+          onKeyDown={addPost}
+        />
+      </div>
+    </div>
   );
 };
 

@@ -5,12 +5,14 @@ export interface userState {
   data: userInfo[];
   loading: boolean;
   auth: boolean;
+  error: string;
 }
 
 const initialState: userState = {
   data: [],
   loading: false,
   auth: false,
+  error: "",
 };
 export const UserSlice = createSlice({
   name: "user",
@@ -31,8 +33,13 @@ export const UserSlice = createSlice({
     UserLogout: (state: userState) => {
       state.auth = false;
     },
+    UserFetchError: (state: userState) => {
+      state.loading = false;
+      state.error = "Пользователь не найден";
+    },
   },
 });
 
-export const { UserFetchingSuccess, UserLogout, UserLoad } = UserSlice.actions;
+export const { UserFetchingSuccess, UserLogout, UserLoad, UserFetchError } =
+  UserSlice.actions;
 export default UserSlice.reducer;

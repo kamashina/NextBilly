@@ -11,26 +11,24 @@ const Video: React.FC = () => {
     setUrl(e.target.value);
   };
   return (
-    <MainContainer title="Видео">
-      <div>
-        <input
-          onChange={handleUrlChange}
-          type="text"
-          placeholder="Ссылка на видео"
-          value={url}
-          className={styles.inpurl}
+    <div>
+      <input
+        onChange={handleUrlChange}
+        type="text"
+        placeholder="Ссылка на видео"
+        value={url}
+        className={styles.inpurl}
+      />
+      <div className="video">
+        <ReactPlayer
+          url={url}
+          controls={true}
+          width="960px"
+          height="503px"
+          loop={true}
         />
-        <div className="video">
-          <ReactPlayer
-            url={url}
-            controls={true}
-            width="960px"
-            height="503px"
-            loop={true}
-          />
-        </div>
       </div>
-    </MainContainer>
+    </div>
   );
 };
 

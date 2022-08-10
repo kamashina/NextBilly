@@ -1,9 +1,9 @@
 .todoContiner{
     display: grid;
     max-width: 18rem;
-    min-height: 24rem;
+    min-height: 23rem;
     max-height: 24.2rem;
-    grid-template-rows: 2.5rem 20.5rem 1rem;
+    grid-template-rows: 2rem 20rem 1rem;
     background-color: rgb(34, 34, 34);
     border: 1px solid rgb(51, 51, 51);
    margin: auto;
@@ -11,16 +11,18 @@
 .todoHeader{
 display: grid;
 grid-template-columns: 16rem 2rem;
-grid-template-rows: 2rem;
-height: 2.5rem;
+grid-template-rows: 1.6rem;
+height: 1.6rem;
 border-bottom: 1px solid rgb(51, 51, 51);;
 }
 
 .inpaddtodo{
     background: rgb(34, 34, 34);
     color: white;
-    height: 2rem;
-    width: 16rem;
+    height: 1.6rem;
+    width: 15.9rem;
+    grid-column-start: 1;
+    grid-row-start: 1;
 }.btnaddtodo{
     background-color: rgb(34, 34, 34);
     border: none;

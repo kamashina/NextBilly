@@ -38,130 +38,124 @@ const Todos: React.FC = () => {
   };
 
   return (
-    <MainContainer title="Список дел">
-      <div className={styles.todoContiner}>
-        <div className={styles.todoHeader}>
-          <input
-            value={message}
-            onKeyDown={PressEnter}
-            className={styles.inpaddtodo}
-            type="text"
-            placeholder="Add to Todo"
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setMessage(e.target.value)
-            }
-          />
-          <button type="button" className={styles.btnaddtodo} onClick={addTodo}>
-            Add
-          </button>
-        </div>
-        <div className={styles.todocont2}>
-          {todo.length !== 0 ? (
-            <div>
-              {(() => {
-                switch (filterArr) {
-                  case "All":
-                    return (
-                      <div>
-                        {todo.map(({ message, id }: TodoCont, idx: number) => (
-                          <div key={id}>
-                            <div className={styles.todocont}>
-                              <div
-                                className={
-                                  todo[idx].complete
-                                    ? styles.complete
-                                    : styles.nocomplete
-                                }
-                                defaultChecked={todo[idx].complete}
-                                onClick={() =>
-                                  (todo[idx].complete = !todo[idx].complete)
-                                }
-                              >
-                                {message}
-                              </div>
-                              <input
-                                type="checkbox"
-                                checked={todo[idx].active}
-                                onChange={() =>
-                                  (todo[idx].active = !todo[idx].active)
-                                }
-                                className={styles.checkactive}
-                              />
+    <div className={styles.todoContiner}>
+      <div className={styles.todoHeader}>
+        <input
+          value={message}
+          onKeyDown={PressEnter}
+          className={styles.inpaddtodo}
+          type="text"
+          placeholder="Add to Todo"
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            setMessage(e.target.value)
+          }
+        />
+        <button type="button" className={styles.btnaddtodo} onClick={addTodo}>
+          Add
+        </button>
+      </div>
+      <div className={styles.todocont2}>
+        {todo.length !== 0 ? (
+          <div>
+            {(() => {
+              switch (filterArr) {
+                case "All":
+                  return (
+                    <div>
+                      {todo.map(({ message, id }: TodoCont, idx: number) => (
+                        <div key={id}>
+                          <div className={styles.todocont}>
+                            <div
+                              className={
+                                todo[idx].complete
+                                  ? styles.complete
+                                  : styles.nocomplete
+                              }
+                              defaultChecked={todo[idx].complete}
+                              onClick={() =>
+                                (todo[idx].complete = !todo[idx].complete)
+                              }
+                            >
+                              {message}
                             </div>
+                            <input
+                              type="checkbox"
+                              checked={todo[idx].active}
+                              onChange={() =>
+                                (todo[idx].active = !todo[idx].active)
+                              }
+                              className={styles.checkactive}
+                            />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  );
+                case "Completed":
+                  return (
+                    <div>
+                      {todo
+                        .filter(
+                          (todo: { complete: boolean }) =>
+                            todo.complete === true
+                        )
+                        .map(({ message, complete, active, id }: TodoCont) => (
+                          <div key={id}>
+                            <Todo
+                              id={id}
+                              message={message}
+                              complete={complete}
+                              active={active}
+                            />
                           </div>
                         ))}
-                      </div>
-                    );
-                  case "Completed":
-                    return (
-                      <div>
-                        {todo
-                          .filter(
-                            (todo: { complete: boolean }) =>
-                              todo.complete === true
-                          )
-                          .map(
-                            ({ message, complete, active, id }: TodoCont) => (
-                              <div key={id}>
-                                <Todo
-                                  id={id}
-                                  message={message}
-                                  complete={complete}
-                                  active={active}
-                                />
-                              </div>
-                            )
-                          )}
-                      </div>
-                    );
-                  case "Active":
-                    return (
-                      <div>
-                        {todo
-                          .filter(
-                            (todo: { active: boolean }) => todo.active === true
-                          )
-                          .map(
-                            ({ message, complete, active, id }: TodoCont) => (
-                              <div key={id}>
-                                <Todo
-                                  id={id}
-                                  message={message}
-                                  complete={complete}
-                                  active={active}
-                                />
-                              </div>
-                            )
-                          )}
-                      </div>
-                    );
-                }
-              })()}
-            </div>
-          ) : (
-            <div className={styles.empty}>
-              <span>Пусто...</span>
-            </div>
-          )}
-        </div>
-
-        <div className={styles.btnfunc}>
-          <button value={filterArr} onClick={() => setFilterArr("All")}>
-            All
-          </button>
-
-          <button type="button" onClick={() => setFilterArr("Active")}>
-            Active
-          </button>
-
-          <button value={filterArr} onClick={() => setFilterArr("Completed")}>
-            Completed
-          </button>
-
-          <button type="button">Rcomplete</button>
-        </div>
+                    </div>
+                  );
+                case "Active":
+                  return (
+                    <div>
+                      {todo
+                        .filter(
+                          (todo: { active: boolean }) => todo.active === true
+                        )
+                        .map(({ message, complete, active, id }: TodoCont) => (
+                          <div key={id}>
+                            <Todo
+                              id={id}
+                              message={message}
+                              complete={complete}
+                              active={active}
+                            />
+                          </div>
+                        ))}
+                    </div>
+                  );
+              }
+            })()}
+          </div>
+        ) : (
+          <div className={styles.empty}>
+            <span>Пусто...</span>
+          </div>
+        )}
       </div>
-    </MainContainer>
+
+      <div className={styles.btnfunc}>
+        <button value={filterArr} onClick={() => setFilterArr("All")}>
+          All
+        </button>
+
+        <button type="button" onClick={() => setFilterArr("Active")}>
+          Active
+        </button>
+
+        <button value={filterArr} onClick={() => setFilterArr("Completed")}>
+          Completed
+        </button>
+
+        <button type="button">Rcomplete</button>
+      </div>
+    </div>
   );
 };
 

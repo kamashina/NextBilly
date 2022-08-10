@@ -1,6 +1,6 @@
 .singlepage_wrapper{
     display: grid;
- grid-template-rows: 3.5em auto auto;
+ grid-template-rows: 4.5em auto auto;
  grid-template-columns: 1fr;
  grid-template-areas: 
  "h"
@@ -15,7 +15,7 @@
      grid-template-columns: 14.531rem 60em 14.531rem;
      grid-template-rows: min-content;
     opacity: 0.9;
-    min-height: 800px;
+    min-height: 46.875rem;
      color: white;
      }.center_content{
          margin-top: 4em;

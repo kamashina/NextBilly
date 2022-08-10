@@ -14,5 +14,8 @@ export const AxiosUserAction = () => async (dispatch: AppDispatch) => {
     })
     .then((response) => {
       dispatch(UserSlice.actions.UserFetchingSuccess(response.data));
+    })
+    .catch((error) => {
+      dispatch(UserSlice.actions.UserFetchError());
     });
 };
