@@ -36,6 +36,7 @@ const Login: React.FC = () => {
           placeholder="Почта"
           className={styles.inp1}
           value={changeemail}
+          type="email"
         />
         <input
           onChange={(event) => setPassword(event.target.value)}

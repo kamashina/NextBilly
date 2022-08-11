@@ -47,7 +47,7 @@ const Reg: FC = () => {
       <input
         onChange={(event) => setEmail(event.target.value)}
         className={styles.email}
-        type="text"
+        type="email"
         placeholder="Почта"
       />
 
