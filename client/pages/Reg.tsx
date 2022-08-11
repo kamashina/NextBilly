@@ -68,9 +68,9 @@ const Reg: FC = () => {
         className={styles.fileup}
         type="file"
       />
-      <button onClick={handleOnclick} type="button" className={styles.regisrt}>
+      <div onClick={handleOnclick} className={styles.regisrt}>
         Регистрация
-      </button>
+      </div>
     </div>
   );
 };

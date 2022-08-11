@@ -29,17 +29,19 @@ color:white;
     grid-area: 2;
     font-size:20px;
     font-weight:bold;
+    background-color: rgb(34, 34, 34, 0.8);
     border-radius: 10px;
-  color:rgb(40, 0, 41);
+    color: white;
 }.inp2{
      font-size:20px;
     font-weight:bold;
-  color:rgb(40, 0, 41);
+color: white;
+  background-color: rgb(34, 34, 34, 0.8);
   border-radius: 10px;
     grid-area: 3;
 }.inpsub{
     grid-area: sub;
-    background-color: rgb(34, 34, 34, 0.9);
+    cursor: pointer;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -51,7 +53,6 @@ color:white;
     color:white;
 }.inpsubbez{
   grid-area: subbez;
-  background-color: rgb(34, 34, 34, 0.9);
   border: none;
   color: white;
   text-align: center;

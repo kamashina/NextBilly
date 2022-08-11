@@ -3,6 +3,7 @@ import { instance } from "../axios";
 import styles from "../styles/auth/Login.module.css";
 import { useRouter } from "next/router";
 import useAction from "../hooks/useAction";
+import Link from "next/link";
 
 const Login: React.FC = () => {
   const [changeemail, setEmail] = useState<string>("");
@@ -26,11 +27,6 @@ const Login: React.FC = () => {
       });
   };
 
-  const Auth = (e: React.MouseEvent<HTMLElement>) => {
-    setEmail("kamran@test.ru");
-    setPassword("12345");
-  };
-
   return (
     <div>
       <div className={styles.login}>
@@ -48,12 +44,12 @@ const Login: React.FC = () => {
           value={changepassword}
           type="password"
         />
-        <button type="button" className={styles.inpsub} onClick={clickHandler}>
+        <div className={styles.inpsub} onClick={clickHandler}>
           Войти
-        </button>
-        <button type="button" className={styles.inpsubbez} onClick={Auth}>
-          Нажми, если нет аккаунта
-        </button>
+        </div>
+        <Link href="/Reg">
+          <a className={styles.inpsubbez}>Нет аккаунта? Зарегистрируйтесь...</a>
+        </Link>
       </div>
     </div>
   );

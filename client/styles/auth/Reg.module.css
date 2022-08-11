@@ -15,23 +15,26 @@ grid-template-rows: 1fr 1fr 1fr 1fr 1fr
     grid-area: 2;
     font-size:20px;
     border-radius: 10px;
+    color: white;
     font-weight:bold;
-  color:rgb(40, 0, 41);
+    background-color: rgb(34, 34, 34, 0.8);
 }.nick{
     grid-area: 3;
+    color: white;
     font-size:20px;
+    background-color: rgb(34, 34, 34, 0.8);
     border-radius: 10px;
     font-weight:bold;
-  color:rgb(40, 0, 41);
 }.pass{
 grid-area: 4;
 border-radius: 10px;
+background-color: rgb(34, 34, 34, 0.8);
 font-size:20px;
 font-weight:bold;
-color:rgb(40, 0, 41);
+color: white;
 }.regisrt{
     grid-area: 5;
-    background-color: rgb(34, 34, 34);
+    cursor: pointer;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -41,7 +44,7 @@ color:rgb(40, 0, 41);
     border-radius: 20px;
     font-size: 16px;
 }.fileup{
-  background-color: rgb(34, 34, 34);
+  cursor: pointer;
     border: none;
     color: white;
     padding: 15px 32px;
