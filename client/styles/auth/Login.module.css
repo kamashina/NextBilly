@@ -10,7 +10,7 @@
 margin-left: auto;
 margin-right: auto;
   height: 17.5rem;
-  background-color: rgb(34, 34, 34, 0.9);
+  background-color: rgb(34, 34, 34, 0.8);
   border-radius: 20px;
   grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-areas:
