@@ -28,7 +28,6 @@ const Todos: React.FC = () => {
     if (message !== "") {
       setTodo([...todo, Newtodo]);
       setMessage("");
-      console.log(todo);
     }
   }
 
@@ -163,7 +162,7 @@ const Todos: React.FC = () => {
         </button>
 
         <button type="button" onClick={RemoveComplete}>
-          DelCompl
+          Rcomplete
         </button>
       </div>
     </div>
