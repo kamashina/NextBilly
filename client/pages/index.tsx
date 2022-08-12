@@ -34,6 +34,7 @@ const Home: NextPage = () => {
           <li>JavaScript</li>
           <li>HTML</li>
           <li>CSS</li>
+          <li>Адаптивная верстка</li>
           <li>Git</li>
           <li>Node.js</li>
           <li>React JS</li>

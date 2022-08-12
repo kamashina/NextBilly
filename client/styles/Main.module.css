@@ -1,11 +1,13 @@
-.main{
-    display: grid;
-grid-template-columns:50% 50%;
-grid-template-rows: 43% 43% 14%;
-background-color: rgb(34, 34, 34, 0.6);
-        border: none;
-        border: 1px solid rgb(51, 51, 51);
-        box-shadow: 0px 8px 16px 6px rgba(0,0,0,0.2);
+
+@media screen and (min-width: 900px) {
+    .main{
+        display: grid;
+    grid-template-columns:50% 50%;
+    grid-template-rows: 43% 43% 14%;
+    background-color: rgb(34, 34, 34, 0.6);
+            border: none;
+            border: 1px solid rgb(51, 51, 51);
+            box-shadow: 0px 8px 16px 6px rgba(0,0,0,0.2);
     }.rezume{
         margin-top: 6%;
         margin-left: 4%;
@@ -26,7 +28,7 @@ background-color: rgb(34, 34, 34, 0.6);
     }
     .weather{
         margin-top: 6%;
-        margin-left: 10%;
+        margin-left: 30%;
         grid-row-start: 1;
         grid-column-start:2;
     }.weather>h1{
@@ -48,11 +50,75 @@ background-color: rgb(34, 34, 34, 0.6);
         grid-column-end: 3;
         grid-row-start: 3;
         text-decoration: none;
-    }
-    
-    .bottombox>p{
     }.bottombox>p>a{
         text-decoration: none;
         color: white;
     }
+  }
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 900px) {
+    .main{
+        display: grid;
+    grid-template-columns:100%;
+    grid-template-rows: 10% 25% 30% 30% 5%;
+    background-color: rgb(34, 34, 34, 0.6);
+            border: none;
+            border: 1px solid rgb(51, 51, 51);
+            box-shadow: 0px 8px 16px 6px rgba(0,0,0,0.2);
+        
+    }.rezume{
+    grid-column-start: 1;
+    grid-row-start: 1;
+    }.rezume> h1{
+        border-bottom: 1px solid white;
+    }.rez{
+        overflow-wrap: break-word;  
+        word-wrap: break-word;
+        word-break: keep-all;  
+        line-break: auto;  
+    }.skills{
+        grid-column-start: 1;
+    grid-row-start: 3;
+    }.skills>ul> h1{
+        border-bottom: 1px solid white;
+    }
+    .weather{
+margin-left: auto;
+margin-right: auto;
+        grid-row-start: 2;
+        grid-column-start:1;
+    }.weather>h1{
+        margin-left: 4.5rem;
+    }
+    
+    .todos{
+        margin-left: auto;
+margin-right: auto;
+        grid-column-start: 1;
+    grid-row-start: 4;
+    }.todos>h1{
+        margin-left: 4.5rem;
+    }.bottombox{
+        margin-left: auto;
+        margin-right: auto;
+        grid-column-start: 1;
+        grid-row-start: 5;
+        text-decoration: none;
+    }.bottombox>p>a{
+        text-decoration: none;
+        color: white;
+    }
+  }
+
+    
+    
+    
     
