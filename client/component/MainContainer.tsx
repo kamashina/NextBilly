@@ -27,8 +27,12 @@ const MainContainer: FC<IMainContainer> = ({ children }) => {
           className={styles.mountains}
         />
         <Header />
-        <div className={styles.wrap_content}>{children}</div>
-        <Footer />
+        <div className={styles.wrap_content}>
+          {children}{" "}
+          <div className={styles.footer}>
+            <Footer />
+          </div>
+        </div>
       </div>
     </>
   );
