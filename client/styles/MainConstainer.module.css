@@ -1,23 +1,31 @@
 .singlepage_wrapper{
     display: grid;
- grid-template-rows: 4.5em auto auto;
+ grid-template-rows: 4.5rem 8fr 5.5rem;
  grid-template-columns: 100%;
- grid-template-areas: 
- "h"
- "cont"
- "footer"
- ;
+ width: 100%;
+ height: 100vh;
+ }.mountains{
+    width: 100%;
+    height: 100vh;
  }
  
  .wrap_content{
      display: grid;
-     grid-area: cont;
-     grid-template-columns: 100%;
-     grid-template-rows: min-content;
+     grid-row-start: 2;
+     width: auto;
+     max-width: 100%;
+     height: auto;
+     max-height: 100vh;
     overflow-y: scroll;
+    overflow-x: hidden;
     scroll-snap-align: start;
-    max-height: 40.3rem;
      color: white;
+     }.footer{
+        display: grid;
+        grid-row-start: 3;
+     }.header{
+        display: grid;
+        grid-row-start: 1;
+        
      }
- 
  

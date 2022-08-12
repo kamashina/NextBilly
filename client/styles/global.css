@@ -1,12 +1,14 @@
-html
-{
-   margin: 0;
-   padding: 0;
-   background-color: black;
-   box-sizing: border-box;
-   overflow-x: hidden;
-overflow-y: hidden; 
-}
+   html
+   {
+      margin: 0;
+      padding: 0;
+font-size: calc(16px + 6 * ((100vw - 320px) / 1280));
+transition: font-size 0.1s;
+      background-color: black;
+      box-sizing: border-box;
+      overflow-x: hidden;
+   overflow-y: hidden; 
+   }
 body
 {
    margin: 0;

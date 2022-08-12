@@ -22,12 +22,13 @@ const MainContainer: FC<IMainContainer> = ({ children }) => {
         <meta></meta>
       </Head>
       <div className={styles.singlepage_wrapper}>
-        <img src="/1650925847_2-vsegda-pomnim-com-p-gori-cherno-belie-foto-3.jpeg" />
+        <img
+          src="/1650925847_2-vsegda-pomnim-com-p-gori-cherno-belie-foto-3.jpeg"
+          className={styles.mountains}
+        />
         <Header />
         <div className={styles.wrap_content}>{children}</div>
-        <div className={styles.wrapfooter}>
-          <Footer />
-        </div>
+        <Footer />
       </div>
     </>
   );

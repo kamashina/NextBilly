@@ -1,19 +1,14 @@
 .footer{
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 30% 70%;
-    grid-area: footer;
+    grid-template-rows: 1 4.5rem;
     background-color: rgb(34, 34, 34, 0.6);
     border-top: 2px solid rgb(51, 51, 51);
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    z-index: 1;
+opacity: 0.9;
 }.vk > a > img{
     width: 2em;
     height: 2em;
 }.git >a > img{
-    grid-row-start: 2;
     width: 2em;
     height: 2em;
 }.vk > a{
@@ -21,17 +16,21 @@
 }.git > a{
     color: white;
 }.vk{
+    display: grid;
+    margin-left: 6%;
+    width: 2em;
+    height: 2em;
     grid-row-start: 2;
     grid-column-start: 1;
-    margin-left: 5em;
-    margin-top: 1em;
+
 }.git{
+    display: grid;
+    margin-left: 1%;
+     width: 2em;
+    height: 2em;
     grid-row-start: 2;
     grid-column-start: 1;
-    margin-left: 2em;
-    margin-top: 1em;
 }.footer > p{
     grid-row-start: 1;
-    margin-left: 0.5em;
     color: white;
 }
